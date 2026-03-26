@@ -406,11 +406,35 @@ button[aria-label]::before {
   --border: 0.0625rem solid var(--color-dark-15);
 }
 
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  -webkit-animation-name: scrolling-header;
+          animation-name: scrolling-header;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  animation-timeline: scroll();
+  animation-range: 6.25rem 12.5rem;
+}
+@-webkit-keyframes scrolling-header {
+  to {
+    -webkit-box-shadow: -1rem 2rem 3rem 1rem var(--color-dark);
+            box-shadow: -1rem 2rem 3rem 1rem var(--color-dark);
+  }
+}
+@keyframes scrolling-header {
+  to {
+    -webkit-box-shadow: -1rem 2rem 3rem 1rem var(--color-dark);
+            box-shadow: -1rem 2rem 3rem 1rem var(--color-dark);
+  }
+}
 .header__promo {
   width: 100%;
   padding-block: 1.25rem;
   text-align: center;
   border-bottom: var(--border);
+  background-color: var(--color-dark);
 }
 @media (width <= 90.06125rem) {
   .header__promo {
