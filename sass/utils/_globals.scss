@@ -1,12 +1,18 @@
 @use "../helpers/" as *;
 
+html {
+  &.is-lock {
+    overflow: hidden;
+  }
+}
+
 body {
   @include fluid-text(18, 14);
 
   font-family: var(--font-family-base);
-  letter-spacing: -0, 3em;
+  letter-spacing: -0.03em;
   color: var(--color-grey-60);
-  background-color: var(--color-dark-10);
+  background-color: var(--color-dark);
 }
 
 h1,
@@ -85,6 +91,8 @@ svg * {
 }
 
 a {
+  color: inherit;
+
   @include hover {
     color: var(--color-accent);
   }
@@ -98,4 +106,17 @@ a {
   outline: rem(2) dashed var(--color-light);
   outline-offset: rem(4);
   transition-duration: 0s !important;
+}
+
+a,
+button {
+  &[aria-label] {
+    position: relative;
+    &::before {
+      @include abs-center;
+      @include square(rem(44));
+      content: "";
+      background-color: transparent;
+    }
+  }
 }
