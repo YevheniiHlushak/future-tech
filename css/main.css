@@ -203,10 +203,23 @@ html.is-lock {
 
 body {
   font-size: clamp(0.875rem, 0.8112745098rem + 0.2614379085vw, 1.125rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-family: var(--font-family-base);
   letter-spacing: -0.03em;
   color: var(--color-grey-60);
   background-color: var(--color-dark);
+}
+
+main {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 h1,
@@ -585,7 +598,7 @@ button[aria-label]::before {
 }
 @media (width <= 90.06125rem) {
   .btn {
-    padding: 0.875rem rem 20;
+    padding: 0.875rem 1.25rem;
     font-size: 0.875rem;
     border-radius: 0.5rem;
   }
