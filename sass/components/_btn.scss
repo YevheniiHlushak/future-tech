@@ -3,18 +3,14 @@
 .btn {
   display: inline-flex;
   justify-content: center;
-  padding: rem(18) rem(24);
   font-size: rem(18);
-  border-radius: rem(12);
   color: var(--color-grey-60);
   background-color: var(--color-dark);
   white-space: nowrap;
   border: var(--border);
 
   @include laptop {
-    padding: rem(14) rem (20);
     font-size: rem(14);
-    border-radius: rem(8);
   }
 
   @include hover {
@@ -33,6 +29,36 @@
     @include hover {
       color: var(--color-light);
       background-color: var(--color-dark);
+    }
+  }
+
+  &--main {
+    padding: rem(18) rem(24);
+    border-radius: rem(12);
+
+    @include laptop {
+      padding: rem(14) rem(20);
+      border-radius: rem(8);
+    }
+  }
+
+  &--footer {
+    column-gap: rem(8);
+    padding: rem(10) rem(16);
+    border-radius: rem(8);
+
+    @include laptop {
+      column-gap: rem(4);
+      padding: rem(8) rem(14);
+      border-radius: rem(6);
+    }
+
+    & .icon--yellow-arrow::after {
+      --size: #{rem(14)};
+
+      @include laptop {
+        --size: #{rem(12)};
+      }
     }
   }
 }
