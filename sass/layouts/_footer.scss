@@ -15,9 +15,30 @@
     align-items: start;
     column-gap: fluid(80, 20);
 
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: rem(40);
+    }
+
+    @include mobile {
+      row-gap: rem(20);
+    }
+
     &-column {
       display: grid;
       row-gap: fluid(36, 16);
+
+      &:last-child {
+        @include tablet {
+          grid-column: -1 / 1;
+
+          .footer__menu-list {
+            flex-direction: row;
+            gap: rem(12);
+            flex-wrap: wrap;
+          }
+        }
+      }
     }
 
     &-main-link {
@@ -47,7 +68,16 @@
       padding-block: rem(24);
     }
 
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      row-gap: rem(20);
+    }
+
     &-menu {
+      @include mobile {
+        order: 2;
+      }
       &-list {
         display: flex;
       }

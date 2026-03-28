@@ -13,12 +13,19 @@
   }
 
   &__link {
+    --size: #{rem(24)};
+
+    @include square((var(--size)));
+
     @include hover {
       color: var(--color-accent);
     }
-
     svg {
       color: currentColor;
+    }
+
+    @include laptop {
+      --size: #{rem(20)};
     }
   }
 }
