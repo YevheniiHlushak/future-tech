@@ -1,0 +1,24 @@
+@use "../helpers/" as *;
+
+.socials {
+  &__list {
+    display: flex;
+    align-items: center;
+    column-gap: rem(20);
+    color: var(--color-light);
+  }
+
+  @include laptop {
+    column-gap: rem(14);
+  }
+
+  &__link {
+    @include hover {
+      color: var(--color-accent);
+    }
+
+    svg {
+      color: currentColor;
+    }
+  }
+}
